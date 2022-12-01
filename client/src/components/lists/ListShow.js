@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ListForm from './ListForm';
+import { Link } from 'react-router-dom';
 
 const ListShow = ({ id, lname, desc, updateList, deleteList }) => {
   const [editing, setEdit] = useState(false)
@@ -30,7 +31,9 @@ const ListShow = ({ id, lname, desc, updateList, deleteList }) => {
           <button onClick={() => deleteList(id)}>
             Delete
           </button>
-          <button>Contacts</button>
+          <Link to={`/${id}/contacts`}>
+            <button>Contacts</button>
+          </Link>
         </>
       }
     </>
