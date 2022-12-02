@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ContactForm from './ContactForm'; 
+import { Link } from 'react-router-dom';
 
 const ContactShow = ({ id, first_name, last_name, email, phone, fav, updateContact, deleteContact }) => {
   const [editing, setEdit] = useState(false)
@@ -35,7 +36,9 @@ const ContactShow = ({ id, first_name, last_name, email, phone, fav, updateConta
           <button onClick={() => deleteContact(id)}>
             Delete
           </button>
-          <button>Comments</button>
+          <Link to={`/${id}/comments`}>
+            <button>Comments</button>
+          </Link>
         </>
       }    
     </>
